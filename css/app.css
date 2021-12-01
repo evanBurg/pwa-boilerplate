@@ -1,0 +1,38 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f8f8ff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    border: 4px dashed #0d47a1;
+    padding: 4px;
+    display: flex;
+    height: calc(100vh - 16px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 6px;
+    color: #357a38
+}
+
+h1.offline {
+    color: #950000;
+}
+
+p {
+    margin-top: 0;
+}
+
+img {
+    width: 150px;
+}
