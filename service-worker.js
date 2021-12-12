@@ -1,38 +1,36 @@
 const version = 1.0;
-const cacheName = "MyCacheName" + version;
-const filesToCache = [
-  "/",
-  "/index.html",
-  "/offline",
-  "/offline/index.html",
-  "js/app.js",
-  "css/app.css",
-];
+const cacheName = `MyCacheName ${version}`;
+const filesToCache = ["/offline/index.html", "/js/app.js", "/css/app.css"];
 
-self.addEventListener("install", function (event) {
-  event.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      return cache.addAll(filesToCache);
-    })
-  );
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(filesToCache)));
   console.log("Service Worker installed...");
 });
 
-self.addEventListener("fetch", function (event) {
-  console.log(event.request.url);
+self.addEventListener("fetch", (event) => {
+  console.log(event.request.url, new Date());
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
+    caches.match(event.request).then((response) => {
+      if (response) return response;
+
+      // Fallback to network and if it fails, return the offline page.
+      return fetch(event.request).catch((error) => {
+        console.log('Network error...', error);
+        console.log('Attempting Offline fallback.');
+        return caches.open(cacheName).then((cache) => {
+          return cache.match("/offline/index.html");
+        });
+      });
     })
   );
 });
 
-self.addEventListener("activate", function (e) {
+self.addEventListener("activate", (e) => {
   console.log("Service Worker: Activate");
   e.waitUntil(
-    caches.keys().then(function (keyList) {
+    caches.keys().then((keyList) => {
       return Promise.all(
-        keyList.map(function (key) {
+        keyList.map((key) => {
           if (key !== cacheName) {
             console.log("Service Worker: Removing old cache", key);
             return caches.delete(key);
