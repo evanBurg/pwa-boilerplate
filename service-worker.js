@@ -1,6 +1,6 @@
 const version = 1.0;
 const cacheName = `MyCacheName ${version}`;
-const filesToCache = ["/offline/index.html", "/js/app.js", "/css/app.css"];
+const filesToCache = ["offline.html", "js/app.js", "css/app.css"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(cacheName).then(async (cache) => {

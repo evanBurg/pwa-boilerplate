@@ -1,7 +1,7 @@
 {
   "name": "my-new-pwa",
   "short_name": "my-new-pwa",
-  "start_url": "./index.html",
+  "start_url": "https://evanburg.github.io/pwa-boilerplate/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
