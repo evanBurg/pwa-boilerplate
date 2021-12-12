@@ -1,6 +1,6 @@
 const version = 1.0;
 const cacheName = `MyCacheName ${version}`;
-const filesToCache = ["/offline/index.html", "/js/app.js", "/css/app.css"];
+const filesToCache = ["/offline.html", "/js/app.js", "/css/app.css"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(filesToCache)));
@@ -18,7 +18,7 @@ self.addEventListener("fetch", (event) => {
         console.log('Network error...', error);
         console.log('Attempting Offline fallback.');
         return caches.open(cacheName).then((cache) => {
-          return cache.match("/offline/index.html");
+          return cache.match("/offline.html");
         });
       });
     })
