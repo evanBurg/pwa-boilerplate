@@ -26,7 +26,7 @@ self.addEventListener("fetch", (event) => {
         console.log('Network error...', error);
         console.log('Attempting Offline fallback.');
         return caches.open(cacheName).then((cache) => {
-          return cache.match("/offline/index.html");
+          return cache.match("offline/index.html");
         });
       });
     })
