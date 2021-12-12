@@ -3,7 +3,15 @@ const cacheName = `MyCacheName ${version}`;
 const filesToCache = ["/offline.html", "/js/app.js", "/css/app.css"];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(filesToCache)));
+  event.waitUntil(caches.open(cacheName).then(async (cache) => {
+    for (file in filesToCache) {
+      try {
+        await cache.add(file);
+      } catch(e) {
+        console.error(file, e);
+      }
+    }
+  }));
   console.log("Service Worker installed...");
 });
 
