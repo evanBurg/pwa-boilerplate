@@ -6,47 +6,34 @@
     <meta name="theme-color" content="#000" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/icon.png"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/icon.png"
-      sizes="16x16"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icon.png" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="16x16" />
     <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="src/app.css" />
   </head>
 
   <body>
     <div class="container">
       <h1 class="offline">You are Offline!</h1>
-      <img src="images/offline.svg" />
+      <img src="assets/images/offline.svg" />
     </div>
   </body>
 
-  <script src="js/app.js"></script>
+  <script src="src/app.js"></script>
 
   <script type="text/javascript">
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register(window.location.href + "service-worker.js")
-        .then(function () {
+    const registerSW = async () => {
+      if ("serviceWorker" in navigator) {
+        try {
+          await navigator.serviceWorker.register(`${window.location.href}service-worker.js`);
           console.log("Service Worker Registered");
-        });
-    }
+        } catch (e) {
+          console.error("Error registering Service Worker...", e);
+        }
+      }
+    };
+    registerSW();
   </script>
 </html>
