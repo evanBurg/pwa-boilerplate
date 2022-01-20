@@ -44,14 +44,14 @@
       "name": "Open Messages",
       "short_name": "Messages",
       "description": "Open the app to your messages",
-      "url": "/messages",
+      "url": "https://evanburg.github.io/pwa-boilerplate/messages",
       "icons": [{ "src": "assets/images/messages.png", "sizes": "192x192" }]
     },
     {
       "name": "Open Settings",
       "short_name": "Settings",
       "description": "Open the app to the settings",
-      "url": "/settings",
+      "url": "https://evanburg.github.io/pwa-boilerplate/settings",
       "icons": [{ "src": "assets/images/settings.png", "sizes": "192x192" }]
     }
   ]
