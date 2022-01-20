@@ -1,42 +1,22 @@
 {
-  "name": "my-new-pwa",
-  "short_name": "my-new-pwa",
+  "name": "Blu Messaging",
+  "short_name": "Messages",
   "start_url": "https://evanburg.github.io/pwa-boilerplate/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#000",
+  "background_color": "#aac8d4",
+  "theme_color": "#75929D",
   "icons": [
     {
       "src": "assets/images/icon.png",
       "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "assets/images/icon.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src":"assets/images/icon.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/images/icon.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "assets/images/icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512 192x192 64x64 32x32 24x24 16x16"
     },
     {
       "src": "assets/images/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
   "shortcuts": [
