@@ -45,14 +45,14 @@
       "short_name": "Messages",
       "description": "Open the app to your messages",
       "url": "/messages",
-      "icons": [{ "src": "/assets/images/messages.png", "sizes": "192x192" }]
+      "icons": [{ "src": "assets/images/messages.png", "sizes": "192x192" }]
     },
     {
       "name": "Open Settings",
       "short_name": "Settings",
       "description": "Open the app to the settings",
       "url": "/settings",
-      "icons": [{ "src": "/assets/images/settings.png", "sizes": "192x192" }]
+      "icons": [{ "src": "assets/images/settings.png", "sizes": "192x192" }]
     }
   ]
 }
