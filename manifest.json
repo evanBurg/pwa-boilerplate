@@ -1,8 +1,8 @@
 {
   "name": "Blu Messaging",
   "short_name": "Messages",
-  "scope": ".",
-  "start_url": "/",
+  "scope": "https://evanburg.github.io/pwa-boilerplate/",
+  "start_url": "https://evanburg.github.io/pwa-boilerplate/",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#aac8d4",
@@ -21,7 +21,7 @@
     }
   ],
   "share_target": {
-    "action": "/sharing",
+    "action": "https://evanburg.github.io/pwa-boilerplate/sharing/",
     "params": {
       "title": "title",
       "text": "text",
@@ -33,14 +33,14 @@
       "name": "Open Messages",
       "short_name": "Messages",
       "description": "Open the app to your messages",
-      "url": "/messages",
+      "url": "https://evanburg.github.io/pwa-boilerplate/messages/",
       "icons": [{ "src": "assets/images/messages.png", "sizes": "192x192" }]
     },
     {
       "name": "Open Settings",
       "short_name": "Settings",
       "description": "Open the app to the settings",
-      "url": "/settings",
+      "url": "https://evanburg.github.io/pwa-boilerplate/settings/",
       "icons": [{ "src": "assets/images/settings.png", "sizes": "192x192" }]
     }
   ]
