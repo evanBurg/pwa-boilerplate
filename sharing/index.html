@@ -3,7 +3,7 @@
   <head>
     <title>My New PWA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000" />
+    <meta name="theme-color" content="#75929D" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet" />
@@ -16,7 +16,9 @@
 
   <body>
     <div class="container">
-      <h1>Settings</h1>
+      <h1>You are Online!</h1>
+      <p>You have shared data to this app!</p>
+      <p id="share-result"></p>
     </div>
   </body>
 
@@ -26,7 +28,7 @@
     const registerSW = async () => {
       if ("serviceWorker" in navigator) {
         try {
-          await navigator.serviceWorker.register(`${window.location.href.replace('settings/', '')}service-worker.js`);
+          await navigator.serviceWorker.register(`${window.location.href.replace('sharing/', '')}service-worker.js`);
           console.log("Service Worker Registered");
         } catch (e) {
           console.error("Error registering Service Worker...", e);
