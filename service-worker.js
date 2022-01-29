@@ -1,6 +1,13 @@
 const version = 1.2;
 const cacheName = `MyCacheName ${version}`;
-const filesToCache = ["offline.html", "assets/images/icon.png", "assets/images/offline.svg", "src/app.js", "src/app.css"];
+const hostedURL = `https://evanburg.github.io/pwa-boilerplate/`;
+const filesToCache = [
+  `${hostedURL}/offline.html`,
+  `${hostedURL}/assets/images/icon.png`,
+  `${hostedURL}/assets/images/offline.svg`,
+  `${hostedURL}/src/app.js`,
+  `${hostedURL}/src/app.css`
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(cacheName).then(async (cache) => {
@@ -26,7 +33,7 @@ self.addEventListener("fetch", (event) => {
         console.log('Network error...', error);
         console.log('Attempting Offline fallback.');
         return caches.open(cacheName).then((cache) => {
-          return cache.match("offline.html");
+          return cache.match(`${hostedURL}/offline.html`);
         });
       });
     })
