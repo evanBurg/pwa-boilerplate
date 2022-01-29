@@ -1,7 +1,7 @@
 {
   "name": "Blu Messaging",
   "short_name": "Messages",
-  "scope": "https://evanburg.github.io/pwa-boilerplate/",
+  "scope": ".",
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",

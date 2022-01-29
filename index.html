@@ -35,7 +35,7 @@
     const registerSW = async () => {
       if ("serviceWorker" in navigator) {
         try {
-          await navigator.serviceWorker.register(`${window.location.href}service-worker.js`, { scope: `${window.location.href}` });
+          await navigator.serviceWorker.register(`${window.location.href}service-worker.js`);
           console.log("Service Worker Registered");
         } catch (e) {
           console.error("Error registering Service Worker...", e);
